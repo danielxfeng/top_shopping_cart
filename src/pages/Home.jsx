@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <div>
-      <h2>Welcome</h2>
+      <h1>Welcome</h1>
       <p>
         We are thrilled to welcome you to our store, your one-stop destination
         for all your shopping needs! Whether you're looking for the latest

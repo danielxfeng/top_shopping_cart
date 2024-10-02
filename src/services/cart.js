@@ -6,6 +6,7 @@ const CartItem = (product, quantity) => {
 // Represents a shopping cart.
 const Cart = () => {
   let _cart = [];
+  let _itemCount = 0;
 
   // Read the cart from the local storage.
   const readFromLocalStorage = () => {
@@ -29,12 +30,14 @@ const Cart = () => {
       _cart.push(CartItem(product, quantity));
     }
     writeToLocalStorage();
+    updateItemCount();
   };
 
   // Clear the cart.
   const clearCart = () => {
     _cart = [];
     writeToLocalStorage();
+    _itemCount = 0;
   };
 
   // Get the subtotal of a cart item.
@@ -47,9 +50,19 @@ const Cart = () => {
     return _cart.reduce((total, cartItem) => total + getSubTotal(cartItem), 0);
   };
 
+  // update the total number of items in the cart.
+  const updateItemCount = () => {
+    return _itemCount = _cart.reduce((total, cartItem) => total + cartItem.quantity, 0);
+  }
+
+  // Get the total number of items in the cart.
+  const getItemCount = () => {
+    return _itemCount;
+  };
+
   readFromLocalStorage();
 
-  return { updateProduct, clearCart, getCart, getSubTotal, getTotal };
+  return { updateProduct, clearCart, getCart, getSubTotal, getTotal, getItemCount };
 };
 
 const cart = Cart();
