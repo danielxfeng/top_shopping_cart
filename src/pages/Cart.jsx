@@ -37,7 +37,7 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <tr key={item.product.id}>
+    <tr>
       <td>{item.product.name}</td>
       <td>
         <span>€</span>
@@ -102,7 +102,7 @@ const Cart = () => {
           </thead>
           <tbody>
             {cart.getCart().map((item) => (
-              <CartItem item={item} />
+              <CartItem key={item.product.id} item={item} />
             ))}
           </tbody>
           <tfoot>
