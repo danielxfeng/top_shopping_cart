@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import productsApi from "../services/productsApi";
 import cart from "../services/cart";
 import { useCartUpdateSign } from "../context/cartContext";
-import pngShoppingCart from "../assets/cart.png";
+import pngShoppingCart from "../assets/shopping_cart.png";
 
 // Product is a component that displays a single product.
 const Product = ({ product }) => {
