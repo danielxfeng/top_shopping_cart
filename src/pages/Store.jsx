@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 
-const Category = () => {
+const Store = () => {
   const { category } = useParams();
   return <div> This is {category}</div>;
 };
 
-export default Category;
+export default Store;

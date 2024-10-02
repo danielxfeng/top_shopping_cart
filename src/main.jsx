@@ -3,8 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home";
-import Store from "./pages/store/Store";
-import Category from "./pages/store/Category";
+import Store from "./pages/Store";
 import Cart from "./pages/Cart";
 import ErrorPage from "./pages/ErrorPage";
 
@@ -19,12 +18,8 @@ const router = createBrowserRouter([
         element: <Home />, // The home page.
       },
       {
-        path: "store",
-        element: <Store />, // The store page, which includes all the products.
-      },
-      {
-        path: "store/:category", // The store page filtered by category.
-        element: <Category />,
+        path: "store/:category?", // The store page filtered by category.
+        element: <Store />,
       },
       {
         path: "cart",
