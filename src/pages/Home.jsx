@@ -1,3 +1,4 @@
+// The home page, just a static page with some text.
 const Home = () => {
   return (
     <div>
