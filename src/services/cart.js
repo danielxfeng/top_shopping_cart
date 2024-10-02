@@ -1,3 +1,6 @@
+import { a } from "vitest/dist/chunks/suite.CcK46U-P.js";
+import orderApi from "./orderApi";
+
 // Represents a product in the cart.
 const CartItem = (product, quantity) => {
   return { product, quantity };
@@ -60,9 +63,14 @@ const Cart = () => {
     return _itemCount;
   };
 
+  // Checkout the cart.
+  const checkout = async () => {
+    return await orderApi(_cart);
+  };
+
   readFromLocalStorage();
 
-  return { updateProduct, clearCart, getCart, getSubTotal, getTotal, getItemCount };
+  return { updateProduct, clearCart, getCart, getSubTotal, getTotal, getItemCount, checkout };
 };
 
 const cart = Cart();
