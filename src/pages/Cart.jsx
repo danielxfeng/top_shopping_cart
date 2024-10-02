@@ -30,7 +30,7 @@ const CartItem = ({ item }) => {
 
   return (
     <tr>
-      <td>{item.product.name}</td>
+      <td><img src={item.product.image} alt={item.product.title}/>{item.product.title}</td>
       <td>
         <span>€</span>
         {item.product.price.toFixed(2)}
