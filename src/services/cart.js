@@ -25,11 +25,24 @@ const Cart = () => {
     return _cart;
   };
 
+  const addProduct = (product) => {
+    const cartItem = _cart.find((item) => item.product.id === product.id);
+    if (!cartItem) {
+      _cart.push(CartItem(product, 1));
+      _cart.sort((a, b) => a.product.id - b.product.id);
+    } else {
+      cartItem.quantity++;
+    }
+    writeToLocalStorage();
+    _itemCount++;
+  };
+
   // Update the product in the cart.
   const updateProduct = (product, quantity) => {
     _cart = _cart.filter((item) => item.product.id !== product.id);
     if (quantity > 0) {
       _cart.push(CartItem(product, quantity));
+      _cart.sort((a, b) => a.product.id - b.product.id);
     }
     writeToLocalStorage();
     updateItemCount();
@@ -54,8 +67,11 @@ const Cart = () => {
 
   // update the total number of items in the cart.
   const updateItemCount = () => {
-    return _itemCount = _cart.reduce((total, cartItem) => total + cartItem.quantity, 0);
-  }
+    return (_itemCount = _cart.reduce(
+      (total, cartItem) => total + cartItem.quantity,
+      0
+    ));
+  };
 
   // Get the total number of items in the cart.
   const getItemCount = () => {
@@ -69,7 +85,16 @@ const Cart = () => {
 
   readFromLocalStorage();
 
-  return { updateProduct, clearCart, getCart, getSubTotal, getTotal, getItemCount, checkout };
+  return {
+    addProduct,
+    updateProduct,
+    clearCart,
+    getCart,
+    getSubTotal,
+    getTotal,
+    getItemCount,
+    checkout,
+  };
 };
 
 const cart = Cart();

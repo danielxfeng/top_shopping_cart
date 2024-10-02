@@ -24,7 +24,7 @@ const Product = ({ product }) => {
 
   // Add the product to the cart.
   const addToCart = () => {
-    cart.updateProduct(product, 1);
+    cart.addProduct(product);
     setUpdateSign({});
   };
 

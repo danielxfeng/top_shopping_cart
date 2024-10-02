@@ -4,27 +4,20 @@ import { useCartUpdateSign } from "../context/cartContext";
 
 // CartItem is a component that displays a single item in the shopping cart.
 const CartItem = ({ item }) => {
-  const [quantity, setQuantity] = useState(item.quantity);
   const { setUpdateSign } = useCartUpdateSign();
 
-  if (quantity === 0) return null;
+  if (item.quantity === 0) return null;
 
   // Add the quantity of the item.
   const add = () => {
-    setQuantity(quantity + 1);
+    cart.updateProduct(item.product, item.quantity + 1);
+    setUpdateSign({});
   };
 
   // Subtract the quantity of the item. Cannot be less than 1.
   const substract = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
-  // Update the quantity of the item.
-  const update = () => {
-    if (quantity !== item.quantity) {
-      cart.updateProduct(item.product, quantity);
+    if (item.quantity > 1) {
+      cart.updateProduct(item.product, item.quantity - 1);
       setUpdateSign({});
     }
   };
@@ -32,7 +25,6 @@ const CartItem = ({ item }) => {
   // Remove the item from the cart.
   const remove = () => {
     cart.updateProduct(item.product, 0);
-    setQuantity(0);
     setUpdateSign({});
   };
 
@@ -47,7 +39,7 @@ const CartItem = ({ item }) => {
         <button type="button" onClick={() => substract()}>
           -
         </button>
-        {quantity}
+        {item.quantity}
         <button type="button" onClick={() => add()}>
           +
         </button>
@@ -57,9 +49,6 @@ const CartItem = ({ item }) => {
         {cart.getSubTotal(item).toFixed(2)}
       </td>
       <td>
-        <button type="button" onClick={() => update()}>
-          Update
-        </button>
         <button type="button" onClick={() => remove()}>
           Remove
         </button>
@@ -78,7 +67,7 @@ const Cart = () => {
     try {
       const res = await cart.checkout();
       cart.clearCart();
-      setResult(`Successful! Your order ID is ${res.id}`);
+      setResult(`Success! Your order ID is ${res.id}`);
       setUpdateSign({});
     } catch (err) {
       setResult("Failed, please retry later.");
