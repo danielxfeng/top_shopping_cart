@@ -70,7 +70,7 @@ const CartItem = ({ item }) => {
 
 // Cart is a page that displays the shopping cart.
 const Cart = () => {
-  const { setUpdateSign } = useCartUpdateSign();
+  const { updateSign, setUpdateSign } = useCartUpdateSign();
   const [result, setResult] = useState("");
 
   // Checkout the cart.
