@@ -71,8 +71,8 @@ const Store = () => {
     const fetchProducts = async () => {
       try {
         const data = category
-          ? await productsApi.getProductsByCategory(category)
-          : await productsApi.getProducts();
+          ? await productsApi.getByCategory(category)
+          : await productsApi.getAll();
         setProducts({status: "success", data: data});
       } catch (error) {
         console.error(error);
