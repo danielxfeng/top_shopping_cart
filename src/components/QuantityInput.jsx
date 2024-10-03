@@ -38,7 +38,7 @@ const QuantityInput = ({ quantity, setQuantity }) => {
         onChange={(e) => inputQuantity(e.target.value)}
       />
       <p ref={ref}>
-        Please input a valid number that greater than 0, or remove it.
+        Please input a valid number that greater than 0.
       </p>
       <button type="button" onClick={subtract}>
         -

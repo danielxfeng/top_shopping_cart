@@ -25,16 +25,16 @@ const Cart = () => {
     return _cart;
   };
 
-  const addProduct = (product) => {
+  const addProduct = (product, quantity) => {
     const cartItem = _cart.find((item) => item.product.id === product.id);
     if (!cartItem) {
-      _cart.push(CartItem(product, 1));
+      _cart.push(CartItem(product, quantity));
       _cart.sort((a, b) => a.product.id - b.product.id);
     } else {
-      cartItem.quantity++;
+      cartItem.quantity += quantity;
     }
     writeToLocalStorage();
-    _itemCount++;
+    _itemCount += quantity;
   };
 
   // Update the product in the cart.

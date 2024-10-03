@@ -3,10 +3,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import productsApi from "../services/productsApi";
 import cart from "../services/cart";
 import { useCartUpdateSign } from "../context/cartContext";
+import QuantityInput from "../components/QuantityInput";
 import pngShoppingCart from "../assets/shopping_cart.png";
 
 // Product is a component that displays a single product.
 const Product = ({ product }) => {
+  const [quantity, setQuantity] = useState(1);
   const { setUpdateSign } = useCartUpdateSign();
   const ref = useRef(null);
 
@@ -24,7 +26,7 @@ const Product = ({ product }) => {
 
   // Add the product to the cart.
   const addToCart = () => {
-    cart.addProduct(product);
+    cart.addProduct(product, quantity);
     setUpdateSign({});
   };
 
@@ -44,9 +46,13 @@ const Product = ({ product }) => {
         {product.price.toFixed(2)}
       </p>
       <h3>{product.title}</h3>
-      <button type="button" onClick={addToCart}>
-        <img src={pngShoppingCart} alt="shopping cart" />
-      </button>
+      <div>
+        <QuantityInput quantity={quantity} setQuantity={setQuantity} />
+        <button type="button" onClick={addToCart}>
+          <img src={pngShoppingCart} alt="shopping cart" />
+        </button>
+      </div>
+
     </div>
   );
 };
