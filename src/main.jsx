@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Store from "./pages/Store";
 import Cart from "./pages/Cart";
 import ErrorPage from "./pages/ErrorPage";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
