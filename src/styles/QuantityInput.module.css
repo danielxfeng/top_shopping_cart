@@ -1,0 +1,20 @@
+.qi {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.qi input {
+  width: 1.3rem;
+  height: 1.3rem;
+  text-align: center;
+  border: none;
+}
+
+.qi input[type="number"]::-webkit-outer-spin-button,
+.qi input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
