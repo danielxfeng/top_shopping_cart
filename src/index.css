@@ -35,6 +35,7 @@ h3,
 h4,
 .title {
   font-family: "Montserrat", sans-serif;
+  color: #444c4e;
 }
 
 a,
@@ -67,4 +68,9 @@ button:hover {
 a:active,
 button:active {
   transform: translate(0, 1px);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }

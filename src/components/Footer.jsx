@@ -8,7 +8,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Fancy Shopping Center
+          Fancy Mall
         </a>
       </p>
       <p>

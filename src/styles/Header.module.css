@@ -1,0 +1,99 @@
+.header {
+  min-height: 100px;
+  flex: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.title p {
+    color: #444c4e;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav__dropdown {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.nav__primary {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav__secondary {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav__secondary__ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav__secondary.show {
+  transform: scaleY(1);
+}
+
+.drop__down__sign {
+  margin-left: 5px;
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart__png {
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+}
+
+.cart__badge {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  background-color: #ef233c;
+  color: #f5f5f5;
+  padding: 0 8px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+}
+
+.cart__badge p {
+  margin: 0;
+}

@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import CartIcon from "./CartIcon";
+import styles from "../styles/Header.module.css";
 
 const Header = () => {
   return (
-    <header>
-      <div>
-        <Link to="/">
-          <h1>Fancy Shopping Center</h1>
+    <header className={styles.header}>
+      <div className={styles.left}>
+        <Link className={styles.title} to="/">
+          <p>Fancy Mall</p>
         </Link>
         <Nav />
       </div>
-      <CartIcon />
+      <CartIcon className={styles.cart__icon} />
     </header>
   );
 };

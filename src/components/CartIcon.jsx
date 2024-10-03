@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import pngShoppingCart from "../assets/shopping_cart.png";
 import { useCartUpdateSign } from "../context/cartContext";
 import cart from "../services/cart";
+import styles from "../styles/Header.module.css";
 
 // CartIcon is a component that displays the shopping cart icon and the number of items in the cart.
 const CartIcon = () => {
@@ -10,13 +11,19 @@ const CartIcon = () => {
   const count = cart.getItemCount();
 
   return (
-    <div>
+    <div className={styles.cart}>
       <Link to="cart">
-        <img src={pngShoppingCart} alt="shopping cart"></img>
+        <img
+          className={styles.cart__png}
+          src={pngShoppingCart}
+          alt="shopping cart"
+        ></img>
+        {count > 0 ? (
+          <div className={styles.cart__badge}>
+            <p>{count}</p>
+          </div>
+        ) : null}
       </Link>
-      <div>
-        <p>{count}</p>
-      </div>
     </div>
   );
 };
