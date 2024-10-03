@@ -19,7 +19,7 @@ const QuantityInput = ({ quantity, setQuantity }) => {
     }
   };
 
-    // Input the quantity of the item.
+  // Input the quantity of the item.
   const inputQuantity = (value) => {
     const number = parseInt(value, 10);
     if (!isNaN(number) && number > 0) {
@@ -37,9 +37,7 @@ const QuantityInput = ({ quantity, setQuantity }) => {
         value={quantity}
         onChange={(e) => inputQuantity(e.target.value)}
       />
-      <p ref={ref}>
-        Please input a valid number that greater than 0.
-      </p>
+      <p ref={ref}>Please input a valid number that greater than 0.</p>
       <button type="button" onClick={subtract}>
         -
       </button>

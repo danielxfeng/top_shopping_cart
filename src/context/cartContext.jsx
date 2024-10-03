@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from "react";
 
 const CartContext = createContext();
 
@@ -11,15 +11,15 @@ const CartProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
-}
+};
 
 // The custom hook for easily accessing the context.
 const useCartUpdateSign = () => {
   const context = useContext(CartContext);
   if (context === undefined) {
-    throw new Error('useCart must be used within a CartProvider');
+    throw new Error("useCart must be used within a CartProvider");
   }
   return context;
-}
+};
 
 export { CartProvider, useCartUpdateSign };

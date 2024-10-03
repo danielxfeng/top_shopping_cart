@@ -6,7 +6,7 @@ const orderApi = async (cart) => {
     const result = Math.random() > 0.5 ? true : false;
     const id = uuidv4();
     setTimeout(() => {
-      result ? resolve({ id: id}) : reject({ id: id });
+      result ? resolve({ id }) : reject({ id });
     }, 2000);
   });
 };

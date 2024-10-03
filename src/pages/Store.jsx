@@ -14,14 +14,12 @@ const Product = ({ product }) => {
 
   // Deal with the loading of the image.
   const handlePicOnLoad = () => {
-    if (ref.current)
-      ref.current.style.display = "none";
+    if (ref.current) ref.current.style.display = "none";
   };
 
   // Deal with the error of the image.
   const handlePicOnError = () => {
-    if (ref.current)
-      ref.current.innerText = "Error loading image.";
+    if (ref.current) ref.current.innerText = "Error loading image.";
   };
 
   // Add the product to the cart.
@@ -52,7 +50,6 @@ const Product = ({ product }) => {
           <img src={pngShoppingCart} alt="shopping cart" />
         </button>
       </div>
-
     </div>
   );
 };
@@ -61,7 +58,7 @@ const Product = ({ product }) => {
 const Store = () => {
   const { category } = useParams();
   const navigate = useNavigate();
-  const [products, setProducts] = useState({status: "loading", data: []});
+  const [products, setProducts] = useState({ status: "loading", data: [] });
 
   // Fetch the products of the selected category.
   useEffect(() => {
@@ -79,20 +76,18 @@ const Store = () => {
         const data = category
           ? await productsApi.getByCategory(category)
           : await productsApi.getAll();
-        setProducts({status: "success", data: data});
+        setProducts({ status: "success", data });
       } catch (error) {
         console.error(error);
-        setProducts({status: "error", data: []});
+        setProducts({ status: "error", data: [] });
       }
     };
 
     fetchProducts();
   }, [category, navigate]);
 
-  if (products.status === "loading")
-    return <div>Loading...</div>;
-  if (products.status === "error")
-    return <div>Error loading products.</div>;
+  if (products.status === "loading") return <div>Loading...</div>;
+  if (products.status === "error") return <div>Error loading products.</div>;
 
   return (
     <div>
