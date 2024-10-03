@@ -84,6 +84,7 @@ const Cart = () => {
   };
 
   readFromLocalStorage();
+  updateItemCount();
 
   return {
     addProduct,
