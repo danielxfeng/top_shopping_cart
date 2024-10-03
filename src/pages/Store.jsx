@@ -5,6 +5,7 @@ import cart from "../services/cart";
 import { useCartUpdateSign } from "../context/cartContext";
 import QuantityInput from "../components/QuantityInput";
 import pngShoppingCart from "../assets/shopping_cart.png";
+import styles from "../styles/Store.module.css";
 
 // Product is a component that displays a single product.
 const Product = ({ product }) => {
@@ -29,25 +30,26 @@ const Product = ({ product }) => {
   };
 
   return (
-    <div>
+    <div className={styles.product}>
       <div>
         <p ref={ref}>Loading...</p>
         <img
+          className={styles.product__img}
           src={product.image}
           alt={product.title}
           onLoad={handlePicOnLoad}
           onError={handlePicOnError}
         ></img>
       </div>
-      <p>
-        <span>€</span>
+      <p className={styles.price}>
+        <span className={styles.currency}>€</span>
         {product.price.toFixed(2)}
       </p>
-      <h3>{product.title}</h3>
-      <div>
+      <h3 className={styles.title}>{product.title}</h3>
+      <div className={styles.add__to__cart}>
         <QuantityInput quantity={quantity} setQuantity={setQuantity} />
         <button type="button" onClick={addToCart}>
-          <img src={pngShoppingCart} alt="shopping cart" />
+          <img className={styles.cart__png} src={pngShoppingCart} alt="shopping cart" />
         </button>
       </div>
     </div>
@@ -87,12 +89,12 @@ const Store = () => {
   }, [category, navigate]);
 
   if (products.status === "loading") return <div>Loading...</div>;
-  if (products.status === "error") return <div>Error loading products.</div>;
+  if (products.status === "error") return <div className="error">Error loading products.</div>;
 
   return (
     <div>
       <h1>Store</h1>
-      <div>
+      <div className={styles.container}>
         {products.data?.map((product) => (
           <Product key={product.id} product={product} />
         ))}
