@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import productsApi from "./services/productsApi";
 import { CartProvider } from "./context/cartContext";
+import styles from "./styles/App.module.css";
 
 const App = () => {
   const [productApiLoaded, setProductApiLoaded] = useState(false);
@@ -26,7 +27,7 @@ const App = () => {
   return (
     <CartProvider>
       <Header />
-      <main>
+      <main className={styles.main}>
         <Outlet />
       </main>
       <Footer />
