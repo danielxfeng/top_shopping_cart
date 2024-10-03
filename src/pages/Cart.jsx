@@ -79,6 +79,11 @@ const Cart = () => {
             </tr>
           </thead>
           <tbody>
+            {cart.getItemCount() === 0 && (
+              <tr>
+                <td colSpan="3">Your cart is empty.</td>
+              </tr>
+            )}
             {cart.getCart().map((item) => (
               <CartItem key={item.product.id} item={item} />
             ))}
