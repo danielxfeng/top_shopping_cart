@@ -1,4 +1,4 @@
-import { useRouteError } from "react-router-dom";
+import { useRouteError, Link } from "react-router-dom";
 import styles from "../styles/ErrorPage.module.css";
 
 // To deal with the router error.
@@ -12,6 +12,7 @@ const ErrorPage = () => {
       <p>
         <i>{error.statusText || error.message}</i>
       </p>
+      <p>Back to <Link to="/">Home</Link></p>
     </div>
   );
 };
