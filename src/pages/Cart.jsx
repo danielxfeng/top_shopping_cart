@@ -1,32 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import cart from "../services/cart";
 import { useCartUpdateSign } from "../context/cartContext";
+import QuantityInput from "../components/QuantityInput";
 
 // CartItem is a component that displays a single item in the shopping cart.
 const CartItem = ({ item }) => {
+  const [quantity, setQuantity] = useState(item.quantity);
   const { setUpdateSign } = useCartUpdateSign();
 
-  if (item.quantity === 0) return null;
-
-  // Add the quantity of the item.
-  const add = () => {
-    cart.updateProduct(item.product, item.quantity + 1);
+  // Update the cart when the quantity changes.
+  useEffect(() => {
+    if (quantity === item.quantity) return;
+    cart.updateProduct(item.product, quantity);
     setUpdateSign({});
-  };
+  }, [quantity]);
 
-  // Subtract the quantity of the item. Cannot be less than 1.
-  const substract = () => {
-    if (item.quantity > 1) {
-      cart.updateProduct(item.product, item.quantity - 1);
-      setUpdateSign({});
-    }
-  };
+  if (quantity === 0) return null;
 
   // Remove the item from the cart.
-  const remove = () => {
-    cart.updateProduct(item.product, 0);
-    setUpdateSign({});
-  };
+  const remove = () => setQuantity(0);
 
   return (
     <tr>
@@ -39,13 +31,7 @@ const CartItem = ({ item }) => {
         {item.product.price.toFixed(2)}
       </td>
       <td>
-        <button type="button" onClick={() => substract()}>
-          -
-        </button>
-        {item.quantity}
-        <button type="button" onClick={() => add()}>
-          +
-        </button>
+        <QuantityInput quantity={quantity} setQuantity={setQuantity} />
       </td>
       <td>
         <span>€</span>
