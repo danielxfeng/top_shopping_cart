@@ -11,3 +11,7 @@
 .footer span {
   margin-right: 5px;
 }
+
+.footer em {
+  margin: 0 10px;
+}

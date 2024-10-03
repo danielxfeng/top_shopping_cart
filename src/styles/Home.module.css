@@ -1,0 +1,29 @@
+.content {
+  margin-top: 50px;
+  margin-left: 150px;
+  transform: translate(100px, 0);
+}
+
+.left {
+  transform: translate(-100px, 0);
+}
+
+.left,
+.content {
+  opacity: 0;
+  transition: opacity 0.1s ease, transform 0.4s ease-in-out;
+}
+
+.left.ok,
+.content.ok {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.bold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #ba875c;
+}
