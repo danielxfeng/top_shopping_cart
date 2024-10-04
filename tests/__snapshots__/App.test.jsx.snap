@@ -1,0 +1,128 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App page > renders correctly 1`] = `
+<div>
+  <header
+    class="_header_a9d33c"
+  >
+    <div
+      class="_left_a9d33c"
+    >
+      <a
+        class="_title_a9d33c"
+        href="/"
+      >
+        <p>
+          Fancy Mall
+        </p>
+      </a>
+      <nav
+        class="_nav_a9d33c"
+      >
+        <ul>
+          <li>
+            <a
+              class="_nav__primary_a9d33c"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <div
+              class="_nav__dropdown_a9d33c"
+            >
+              <a
+                class="_nav__primary_a9d33c"
+                href="/store"
+              >
+                Store
+                <span
+                  class="_drop__down__sign_a9d33c"
+                >
+                  ⌵
+                </span>
+              </a>
+              <div
+                class="_nav__secondary_a9d33c"
+              >
+                <ul
+                  class="_nav__secondary__ul_a9d33c"
+                >
+                  <li>
+                    <a
+                      href="/store/electronics"
+                    >
+                      electronics
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/store/jewelery"
+                    >
+                      jewelery
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/store/men's clothing"
+                    >
+                      men's clothing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/store/women's clothing"
+                    >
+                      women's clothing
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div
+      class="_cart_a9d33c"
+    >
+      <a
+        href="/cart"
+      >
+        <img
+          alt="shopping cart"
+          class="_cart__png_a9d33c"
+          src="/src/assets/shopping_cart.png"
+        />
+      </a>
+    </div>
+  </header>
+  <main
+    class="_main_61351a"
+  />
+  <footer
+    class="_footer_4d8704"
+  >
+    <p>
+      <span>
+        © 2024
+      </span>
+      <a
+        href="https://github.com/danielxfeng/top_shopping_cart"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Fancy Mall
+      </a>
+    </p>
+    <p>
+      Made by ❤️
+      <em>
+        Daniel
+      </em>
+      ❤️
+    </p>
+  </footer>
+</div>
+`;

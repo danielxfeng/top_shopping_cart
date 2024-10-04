@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Footer page > renders correct 1`] = `
+<div>
+  <footer
+    class="_footer_4d8704"
+  >
+    <p>
+      <span>
+        © 2024
+      </span>
+      <a
+        href="https://github.com/danielxfeng/top_shopping_cart"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Fancy Mall
+      </a>
+    </p>
+    <p>
+      Made by ❤️
+      <em>
+        Daniel
+      </em>
+      ❤️
+    </p>
+  </footer>
+</div>
+`;

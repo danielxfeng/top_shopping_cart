@@ -1,17 +1,38 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App";
+import { Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import productsApi from "./services/productsApi";
+import { CartProvider } from "./context/cartContext";
+import styles from "./styles/App.module.css";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-]);
+const App = () => {
+  const [productApiLoaded, setProductApiLoaded] = useState(false);
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
-);
+  useEffect(() => {
+    const isLoaded = async () => {
+      try {
+        await productsApi.init();
+        setProductApiLoaded(true);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    isLoaded();
+  }, []);
+
+  if (!productApiLoaded) return <div>Loading...</div>;
+
+  return (
+    <CartProvider>
+      <Header />
+      <main className={styles.main}>
+        <Outlet />
+      </main>
+      <Footer />
+    </CartProvider>
+  );
+};
+
+export default App;

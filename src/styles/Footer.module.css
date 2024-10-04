@@ -1,0 +1,17 @@
+.footer {
+  min-height: 30px;
+  flex: 0;
+  background-color: #596b5f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #f5f5f5;
+}
+
+.footer span {
+  margin-right: 5px;
+}
+
+.footer em {
+  margin: 0 10px;
+}
