@@ -21,19 +21,21 @@ This project uses the [Fake Store API](https://fakestoreapi.com/) to provide pro
 
 ## Installation
 
-To run this project locally, follow these steps:
+1. To run this project locally, follow these steps:
 
-1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/fancy-mall.git```
-2. Navigate to the project directory:
-  ```cd fancy-mall```
-3. Install dependencies:
-  ```npm install```
-4. Start the development server:
-  ```npm run dev```
-5. Run tests:
-  ```npm run test```
+   git clone https://github.com/yourusername/fancy-mall.git
+   cd fancy-mall
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Run tests:
+   ```bash
+   npm run test
+   ```
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
