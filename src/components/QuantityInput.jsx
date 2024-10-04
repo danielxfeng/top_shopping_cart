@@ -26,6 +26,7 @@ const QuantityInput = ({ quantity, setQuantity }) => {
       </button>
       <input
         type="number"
+        name="quantity"
         value={quantity}
         onChange={(e) => inputQuantity(e.target.value)}
       />
