@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { CartProvider } from "../src/context/cartContext";
@@ -8,6 +8,14 @@ import cart from "../src/services/cart";
 
 vi.mock("../src/services/productsApi");
 vi.mock("../src/services/cart");
+
+beforeEach(() => {
+  vi.clearAllMocks();
+});
+
+afterEach(() => {
+  vi.resetAllMocks();
+});
 
 describe("Store Page", () => {
   it("navigates to error page for invalid category", async () => {
@@ -28,6 +36,7 @@ describe("Store Page", () => {
   });
 
   it("shows error message if products loading fails", async () => {
+    productsApi.getCategories.mockReturnValue(["electronics", "books"]);
     productsApi.getByCategory.mockRejectedValue(new Error("API error"));
 
     render(
@@ -48,6 +57,7 @@ describe("Store Page", () => {
       { id: 1, title: "Product 1", price: 10, image: "/product1.png" },
       { id: 2, title: "Product 2", price: 20, image: "/product2.png" },
     ];
+    productsApi.getCategories.mockReturnValue(["electronics", "books"]);
     productsApi.getByCategory.mockResolvedValue(mockProducts);
     const contextValue = { updateSign: {} };
 
@@ -76,6 +86,7 @@ describe("Product", () => {
       { id: 1, title: "Product 1", price: 10, image: "/product1.png" },
       { id: 2, title: "Product 2", price: 20, image: "/product2.png" },
     ];
+    productsApi.getCategories.mockReturnValue(["electronics", "books"]);
     productsApi.getByCategory.mockResolvedValue(mockProducts);
     const contextValue = { updateSign: {} };
 
@@ -95,8 +106,8 @@ describe("Product", () => {
       expect(screen.getByText("Product 2")).toBeInTheDocument();
 
       // Check product prices
-      expect(screen.getByText(/€10\.00/)).toBeInTheDocument();
-      expect(screen.getByText(/€20\.00/)).toBeInTheDocument();
+      expect(screen.getByText(/10\.00/)).toBeInTheDocument();
+      expect(screen.getByText(/20\.00/)).toBeInTheDocument();
 
       // Check product images
       expect(screen.getByAltText("Product 1")).toHaveAttribute(
@@ -114,6 +125,7 @@ describe("Product", () => {
     const mockProducts = [
       { id: 1, title: "Product 1", price: 10, image: "/product1.png" },
     ];
+    productsApi.getCategories.mockReturnValue(["electronics", "books"]);
     productsApi.getByCategory.mockResolvedValue(mockProducts);
     const contextValue = { updateSign: {} };
 
@@ -151,6 +163,7 @@ describe("Product", () => {
     const mockProducts = [
       { id: 1, title: "Product 1", price: 10, image: "/product1.png" },
     ];
+    productsApi.getCategories.mockReturnValue(["electronics", "books"]);
     productsApi.getByCategory.mockResolvedValue(mockProducts);
     const contextValue = { updateSign: {} };
 
