@@ -21,7 +21,7 @@
 }
 
 .title p {
-    color: #444c4e;
+  color: #444c4e;
 }
 
 ul {
@@ -97,4 +97,14 @@ ul {
 
 .cart__badge p {
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .left {
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
 }

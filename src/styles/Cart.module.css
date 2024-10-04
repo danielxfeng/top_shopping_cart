@@ -1,14 +1,14 @@
 .container {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .cart {
-    flex: 2;
+  flex: 2;
 }
 
-.cart caption{
-    text-align: left;
+.cart caption {
+  text-align: left;
 }
 
 .cart thead {
@@ -17,69 +17,93 @@
 }
 
 .cart thead th {
-    padding: 2px 10px;
+  padding: 2px 10px;
 }
 
 .cart .btn__remove {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .head__product {
-    min-width: 300px;
+  min-width: 300px;
 }
 
 .head__item {
-    width: 70px;
+  width: 70px;
 }
 
 .product__description {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .product__img {
-    width: 16px;
-    height: 16px;
-    object-fit: cover;
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
 }
 
 .currency {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .cart tfoot {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .summary {
-    flex: 0;
-    background-color: #ba875c;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    color: #f5f5f5;
-    font-weight: bold;
+  flex: 0;
+  background-color: #ba875c;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  color: #f5f5f5;
+  font-weight: bold;
 }
 
 .summary h2 {
-    color: #f5f5f5;
-    text-decoration: underline;
+  color: #f5f5f5;
+  text-decoration: underline;
 }
 
 .summary button {
-    padding: 10px 20px;
-    background-color: #f5f5f5;
-    color: #ba875c;
-    border-radius: 5px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  color: #ba875c;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.summary button:hover, .summary button:active, .summary button:visited {
-    background-color: #f5f5f5;
-    color: #ba875c;
+.summary button:hover,
+.summary button:active,
+.summary button:visited {
+  background-color: #f5f5f5;
+  color: #ba875c;
+}
+
+@media (max-width: 1024px) {
+  .head__product {
+    min-width: 10vw;
+    max-width: 15vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .cart {
+    overflow: scroll;
+  }
+
+  .head__product {
+    min-width: 0;
+    max-width: 20vw;
+  }
 }
