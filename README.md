@@ -25,15 +25,15 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/fancy-mall.git
+   git clone https://github.com/yourusername/fancy-mall.git```
 2. Navigate to the project directory:
-  ```cd fancy-mall
+  ```cd fancy-mall```
 3. Install dependencies:
-  ```npm install
+  ```npm install```
 4. Start the development server:
-  ```npm run dev
+  ```npm run dev```
 5. Run tests:
-  ```npm run test
+  ```npm run test```
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
