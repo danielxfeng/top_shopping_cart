@@ -1,8 +1,39 @@
-# React + Vite
+# Fancy Mall - Simple Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Fancy Mall is a simple shopping cart project built as part of an exercise from [The Odin Project](https://www.theodinproject.com/). The project demonstrates basic e-commerce functionality such as browsing products, filtering by category, adding/removing products from the cart, and submitting an order using a fake API.
 
-Currently, two official plugins are available:
+## Live Preview
+You can view the live demo of the project at: [https://fancymall.netlify.app](https://fancymall.netlify.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Browse Products**: View all available products from the [Fake Store API](https://fakestoreapi.com/).
+- **Filter by Category**: Browse products by selected categories for easier navigation.
+- **Shopping Cart**: Add products to the cart, adjust quantities, and remove items.
+- **Order Submission**: Submit your order using a fake API request (no actual transaction takes place).
+
+## Technologies Used
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A build tool that provides a fast development experience.
+- **Vitest**: A testing framework for unit testing React components.
+
+## API
+This project uses the [Fake Store API](https://fakestoreapi.com/) to provide product data and simulate order submissions.
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/fancy-mall.git
+2. Navigate to the project directory:
+  ```cd fancy-mall
+3. Install dependencies:
+  ```npm install
+4. Start the development server:
+  ```npm run dev
+5. Run tests:
+  ```npm run test
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
