@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home page > renders correct 1`] = `
+<div>
+  <div
+    class="_home_b140de"
+  >
+    <h1
+      class="_left_b140de"
+    >
+      Welcome
+    </h1>
+    <section
+      class="_content_b140de"
+    >
+      <p>
+        We are thrilled to welcome you to our store, your one-stop destination for all your shopping needs! Whether you're looking for the latest electronics, stylish clothing, or unique gifts, we've got you covered with a wide range of high-quality products at unbeatable prices.
+      </p>
+      <p>
+        At our store, we strive to provide an exceptional shopping experience with an easy-to-navigate store, fast and secure checkout, and a team of customer service experts ready to assist you with any questions.
+      </p>
+      <p>
+        Enjoy browsing through our carefully curated collections, and don’t forget to check out the exclusive deals available in each category!
+      </p>
+      <p
+        class="_bold_b140de"
+      >
+        Happy Shopping!
+      </p>
+    </section>
+  </div>
+</div>
+`;
